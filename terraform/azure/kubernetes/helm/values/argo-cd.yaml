@@ -1,0 +1,5 @@
+enableAutomatedSync: true
+fullnameOverride: "argocd"
+server:
+  insecure: true
+version: "1.0.0"

@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webapp
+  namespace: argo-cd
+
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/joskapista01/szakdolgozat-webapp.git
+    targetRevision: main
+    path: helm/webapp
+    helm:
+      version: v3
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false

@@ -1,0 +1,1 @@
+kubectl get svc nginx-ingress-controller-ingress-nginx-controller -n nginx-ingress | awk {'print $4'} | column -t

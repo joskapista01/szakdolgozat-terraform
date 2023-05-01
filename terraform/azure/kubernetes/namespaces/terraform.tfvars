@@ -1,0 +1,1 @@
+namespaces = ["apps", "servers", "nginx-ingress", "argo-cd"]
