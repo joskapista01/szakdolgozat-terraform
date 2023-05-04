@@ -1,3 +1,4 @@
+# Creates the namespaces in kubernetes
 resource "kubernetes_namespace" "namespace" {
   for_each = toset(var.namespaces)
    metadata{

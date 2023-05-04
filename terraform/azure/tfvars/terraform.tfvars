@@ -1,3 +1,5 @@
+# Common terraform variables
+
 main_resource_group_name="main-resource-group"
 location="West Europe"
 main_vnet_name="main-vnet"

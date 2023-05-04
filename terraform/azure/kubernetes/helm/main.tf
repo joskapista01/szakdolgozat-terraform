@@ -1,3 +1,4 @@
+# Creates the nginx-ingress controller from a helm chart
 resource "helm_release" "nginx_ingress" {
   name       = "nginx-ingress-controller"
   chart      = "charts/ingress-nginx"
@@ -18,6 +19,7 @@ resource "helm_release" "nginx_ingress" {
    
 }
 
+# Creates ArgoCD from a helm chart
 resource "helm_release" "argo_cd" {
   name       = "argo-cd"
   chart      = "charts/argo-cd"
@@ -25,6 +27,7 @@ resource "helm_release" "argo_cd" {
   values = ["${file("values/argo-cd.yaml")}"]
 }
 
+# Creates the Application resources for ArgoCD
 resource "helm_release" "argo_cd_apps" {
   name       = "argo-cd-apps"
   chart      = "charts/apps"

@@ -1,9 +1,11 @@
+# Uses the kubernetes subnet
 data "azurerm_subnet" "k8s_subnet" {
   name = var.k8s_subnet_name
   virtual_network_name = var.main_vnet_name
   resource_group_name = var.main_resource_group_name
 }
 
+# Creates an aks resource in the kubernetes subnet
 resource "azurerm_kubernetes_cluster" "k8s_main" {
   name                = var.k8s_main_name
   location            = var.location

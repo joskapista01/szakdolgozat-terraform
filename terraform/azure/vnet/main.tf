@@ -1,4 +1,5 @@
 
+# Creates the virtual network for the kubernetes cluster
 resource "azurerm_virtual_network" "main_vnet" {
   name                = var.main_vnet_name
   location            = var.location
@@ -6,6 +7,7 @@ resource "azurerm_virtual_network" "main_vnet" {
   address_space       = var.address_space
 }
 
+# Creates a subnet in the virtual network
 resource "azurerm_subnet" "k8s_subnet" {
   resource_group_name = var.main_resource_group_name
   virtual_network_name = var.main_vnet_name
